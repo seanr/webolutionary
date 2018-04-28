@@ -1,0 +1,14 @@
+uuid: 5602b1ba-6092-431c-bc6d-cc99391944d1
+name: webolutionary
+mail: seanr@webolutionary.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
