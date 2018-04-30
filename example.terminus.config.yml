@@ -1,0 +1,9 @@
+command:
+  auth:
+    login:
+      options:
+        machine-token: YOUR_MACHINE_TOKEN_HERE
+  site:
+    pancakes:
+      options:
+        app: sequelpro

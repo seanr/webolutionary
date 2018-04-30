@@ -4,3 +4,15 @@ config:
   framework: drupal8
   site: webolutionary
   id: da848ed7-9c52-4e9c-a2dd-6f255d766d85
+services:
+  appserver:
+    build:
+      - "cp -rf /app/terminus.config.yml $HOME/.terminus/config.yml"
+      - "terminus auth:login"
+      - "rm -rf $HOME/.terminus/plugins"
+      - "mkdir -p $HOME/.terminus/plugins"
+      - "composer create-project -d $HOME/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:~1"
+      - "composer create-project --no-dev -d $HOME/.terminus/plugins pantheon-systems/terminus-drupal-console-plugin:~1"
+      - "terminus self:clear-cache"
+    run:
+      - "cd /app && composer install"
