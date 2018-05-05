@@ -1,0 +1,30 @@
+# Compiled files
+assets/
+
+# Pattern Lab
+src/pattern-lab/_twig-components
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._.DS_Store
+._.DS_Store?
+
+# Dependencies
+node_modules
+
+# Generated files
+*.sass-cache/
+.eslintcache
+*unison.*
+
+#IDE plugins
+.idea
+atlassian-ide-plugin.xml
+
+source/styleguide/css
+
+# Errors
+npm-debug.log
+php_errors.log
+

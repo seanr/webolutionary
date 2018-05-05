@@ -1,0 +1,30 @@
+name: Webolutionary
+type: theme
+description: 'Custom theme for webolutionary.com build with PatternLab'
+core: 8.x
+base theme: stable
+regions:
+  main_nav: Main Navigation
+  content: Content
+  footer_menu: Footer Menu
+libraries:
+  - webolutionary/webolutionary_global
+# For compatibility between Drupal and Pattern Lab,
+# library aliases MUST be set to the name of the folder, minus the number.
+# Case must match as well.
+component-libraries:
+  atoms:
+    paths:
+      - src/pattern-lab/_patterns/00-atoms
+  molecules:
+    paths:
+      - src/pattern-lab/_patterns/01-molecules
+  organisms:
+    paths:
+      - src/pattern-lab/_patterns/02-organisms
+  templates:
+    paths:
+      - src/pattern-lab/_patterns/03-templates
+  pages:
+    paths:
+      - src/pattern-lab/_patterns/04-pages
