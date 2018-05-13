@@ -32,6 +32,10 @@ web/sites/example.sites.php
 web/update.php
 web/web.config
 
+# Ignore custom folders for source and backups
+/backups/
+/source/
+
 # Add directories containing build assets below.
 # Keep all additions above the "cut" line.
 
