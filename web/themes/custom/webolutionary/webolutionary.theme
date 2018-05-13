@@ -2,144 +2,128 @@
 
 /**
  * @file
- * Functions to support theming in the webolutionary theme.
+ * Functions to support theming in Shila theme.
  */
+
+use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Implements hook_preprocess_HOOK() for html.html.twig.
+ * Adds a form id based template suggestion for all forms.
+ *
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
  */
-function webolutionary_preprocess_html(array &$variables) {
-  /* Add class to html tag */
-  //$variables['html_attributes']->addClass('no-js');
-
-  // Don't display the site name twice on the front page (and potentially others)
-  /*if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
-    $variables['head_title'] = $variables['head_title_array']['name'];
-  }*/
+function webolutionary_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'form__' . $variables['element']['#form_id'];
 }
 
 /**
- * Implements hook_page_attachments_alter().
+ * Adds a placeholder attribute to the search block form.
+ *
+ * Implements hook_form_alter().
  */
-function webolutionary_page_attachments_alter(array &$page) {
-  // Tell IE to use latest rendering engine (not to use compatibility mode).
-  /*$ie_edge = [
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => [
-    'http-equiv' => 'X-UA-Compatible',
-    'content' => 'IE=edge',
-    ],
+function webolutionary_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'search_block_form') {
+    $form['keys']['#attributes']['placeholder'] = t('Enter your keywords');
+  }
+}
+
+/**
+ * Adds classes to menu links. This cannot be done in Twig templates without
+ * using Drupal specific extensions.
+ *
+ * Implements hook_preprocess_HOOK() for menu.html.twig.
+ */
+function webolutionary_preprocess_menu(&$variables) {
+  _menu_links($variables['items'], 0);
+}
+
+/**
+ * Helper function for adding classes to menu links.
+ */
+function _menu_links(&$items, $menu_level) {
+  foreach ($items as $item) {
+    $classes = ['menu-item'];
+    if ($item['is_expanded']) {
+      $classes[] = 'menu-item--expanded';
+    }
+    if ($item['is_collapsed']) {
+      $classes[] = 'menu-item--collapsed';
+    }
+    if ($item['in_active_trail']) {
+      $classes[] = 'menu-item--active-trail';
+    }
+    $item['attributes']->addClass($classes);
+    if ($item['below']) {
+      _menu_links($item['below'], $menu_level + 1);
+    }
+  }
+}
+
+/**
+ * Removes specific attributes from pagers. This cannot be done in Twig
+ * templates without using Drupal specific extensions.
+ *
+ * Implements hook_preprocess_HOOK() for pager.html.twig.
+ */
+function webolutionary_preprocess_pager(&$variables) {
+  $keys = [
+    'first' => ['href', 'title'],
+    'previous' => ['href', 'title', 'rel'],
+    'next' => ['href', 'title', 'rel'],
+    'last' => ['href', 'title'],
   ];
-  $page['#attached']['html_head'][] = [$ie_edge, 'ie_edge'];*/
+  foreach ($keys as $key => $remove) {
+    _remove_attributes($variables, $key, $remove);
+  }
+  if (isset($variables['items']['pages'])) {
+    foreach ($variables['items']['pages'] as $key => $item) {
+      if (isset($item['attributes'])) {
+        $item['attributes']->removeAttribute('href')->removeAttribute('title');
+      }
+    }
+  }
 }
 
 /**
- * Implements hook_preprocess_page() for page.html.twig.
+ * Helper function for removing attributes.
  */
-function webolutionary_preprocess_page(array &$variables) {
-
+function _remove_attributes(&$variables, $key, $remove) {
+  if (isset($variables['items'][$key]['attributes'])) {
+    foreach ($remove as $attribute) {
+      $variables['items'][$key]['attributes']->removeAttribute($attribute);
+    }
+  }
 }
 
 /**
- * Implements hook_theme_suggestions_page_alter().
+ * Adds the entity and possible contextual links to PatternContext when using
+ * UI Patterns Layouts module.
+ *
+ * Implements template_preprocess_ds_entity_view().
  */
-function webolutionary_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-
+function webolutionary_preprocess_ds_entity_view(&$variables) {
+  if (isset($variables['content']['#type']) && $variables['content']['#type'] == 'pattern') {
+    $variables['content']['#context']['entity'] = $variables['content']['#entity'];
+    if (isset($variables['title_suffix']['contextual_links'])) {
+      $variables['content']['#context']['contextual_links'] = $variables['title_suffix']['contextual_links'];
+    }
+  }
 }
 
 /**
- * Implements hook_theme_suggestions_node_alter().
+ * Adds entity type and view mode BEM modifier classes and contextual links to
+ * shila-cards when using UI Patterns module.
+ *
+ * Implements hook_preprocess_HOOK().
  */
-function webolutionary_theme_suggestions_node_alter(array &$suggestions, array $variables) {
-  /*$node = $variables['elements']['#node'];
-
-  if ($variables['elements']['#view_mode'] == "full") {
-
-  }*/
-}
-
-/**
- * Implements hook_preprocess_HOOK() for Block document templates.
- */
-function webolutionary_preprocess_block(array &$variables) {
-
-}
-
-/**
- * Implements hook_theme_suggestions_field_alter().
- */
-function webolutionary_theme_suggestions_field_alter(array &$suggestions, array $variables) {
-  /*$element = $variables['element'];
-  $suggestions[] = 'field__' . $element['#view_mode'];
-  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];*/
-}
-
-/**
- * Implements hook_theme_suggestions_field_alter().
- */
-function webolutionary_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
-  /*$element = $variables['element'];
-  if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
-    $suggestions[] = 'fieldset__form_composite';
-  }*/
-}
-
-/**
- * Implements hook_preprocess_node().
- */
-function webolutionary_preprocess_node(array &$variables) {
-  // Default to turning off byline/submitted.
-  //$variables['display_submitted'] = FALSE;
-}
-
-/**
- * Implements hook_theme_suggestions_views_view_alter().
- */
-function webolutionary_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
-
-}
-
-/**
- * Implements hook_preprocess_form().
- */
-function webolutionary_preprocess_form(array &$variables) {
-  //$variables['attributes']['novalidate'] = 'novalidate';
-}
-
-/**
- * Implements hook_preprocess_select().
- */
-function webolutionary_preprocess_select(array &$variables) {
-  //$variables['attributes']['class'][] = 'select-chosen';
-}
-
-/**
- * Implements hook_preprocess_field().
- */
-function webolutionary_preprocess_field(array &$variables, $hook) {
-  /*switch ($variables['element']['#field_name']) {
-  }*/
-}
-
-/**
- * Implements hook_preprocess_details().
- */
-function webolutionary_preprocess_details(array &$variables) {
-  /*$variables['attributes']['class'][] = 'details';
-  $variables['summary_attributes']['class'] = 'summary';*/
-}
-
-/**
- * Implements hook_theme_suggestions_details_alter().
- */
-function webolutionary_theme_suggestions_details_alter(array &$suggestions, array $variables) {
-
-}
-
-/**
- * Implements hook_preprocess_menu_local_task().
- */
-function webolutionary_preprocess_menu_local_task(array &$variables) {
-  //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+function webolutionary_preprocess_pattern_shila_card(&$variables) {
+  $classes = [
+    'card--type-' . $variables['context']->getProperty('bundle'),
+    'card--view-mode-' . $variables['context']->getProperty('view_mode'),
+  ];
+  if ($variables['context']->getProperty('contextual_links')) {
+    $classes[] = 'contextual-region';
+    $variables['contextual_links'] = $variables['context']->getProperty('contextual_links');
+  }
+  $variables['attributes'] = $variables['attributes']->addClass($classes);
 }

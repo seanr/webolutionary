@@ -1,12 +1,28 @@
-webolutionary.narrow:
-  label: narrow
-  mediaQuery: 'all and (min-width: 560px) and (max-width: 850px)'
-  weight: '1'
+webolutionary.xs:
+  label: XS
+  mediaQuery: 'all and (max-width: 524px)'
+  weight: 0
   multipliers:
-    - '1x'
-webolutionary.wide:
-  label: wide
-  mediaQuery: 'all and (min-width: 850px)'
-  weight: '1'
+    - 1x
+    - 2x
+webolutionary.s:
+  label: S
+  mediaQuery: 'all and (min-width: 525px) and (max-width: 800px)'
+  weight: 1
   multipliers:
-    - '1x'
+    - 1x
+    - 2x
+webolutionary.m:
+  label: M
+  mediaQuery: 'all and (min-width: 801px) and (max-width: 1024px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+webolutionary.l:
+  label: L
+  mediaQuery: 'all and (min-width: 1025px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x

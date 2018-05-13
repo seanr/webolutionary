@@ -1,30 +1,26 @@
-name: Webolutionary
+name: Shila theme
 type: theme
-description: 'Custom theme for webolutionary.com build with PatternLab'
+description: An atomic design and Pattern Lab friendly starting point for new Drupal themes.
+package: Shila
 core: 8.x
-base theme: stable
-regions:
-  main_nav: Main Navigation
-  content: Content
-  footer_menu: Footer Menu
 libraries:
-  - webolutionary/webolutionary_global
-# For compatibility between Drupal and Pattern Lab,
-# library aliases MUST be set to the name of the folder, minus the number.
-# Case must match as well.
+  - core/normalize
+  - webolutionary/global-styling
+regions:
+  header: Header
+  content: Content
+  footer: Footer
+  off_canvas: Off Canvas
 component-libraries:
   atoms:
     paths:
-      - src/pattern-lab/_patterns/00-atoms
+      - dist/_patterns/00-atoms
   molecules:
     paths:
-      - src/pattern-lab/_patterns/01-molecules
+      - dist/_patterns/01-molecules
   organisms:
     paths:
-      - src/pattern-lab/_patterns/02-organisms
+      - dist/_patterns/02-organisms
   templates:
     paths:
-      - src/pattern-lab/_patterns/03-templates
-  pages:
-    paths:
-      - src/pattern-lab/_patterns/04-pages
+      - dist/_patterns/03-templates
