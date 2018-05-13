@@ -58,10 +58,10 @@ services:
     overrides:
       services:
         ports:
-          - 3050:3050
+          - 8088:8088
 proxy:
   node:
-    - patterns.webolutionary.lndo.site:3050
+    - patterns.webolutionary.lndo.site:8088
 tooling:
   node:
     service: node
