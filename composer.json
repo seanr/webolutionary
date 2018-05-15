@@ -22,6 +22,7 @@
         "drupal/config_installer": "^1.8",
         "drupal/console": "~1.0",
         "drupal/core": "^8.5.3",
+        "drupal/geshifilter": "^1.2",
         "drupal/simple_block": "^1.0@beta",
         "drupal/ui_patterns": "^1.0@RC",
         "drush-ops/behat-drush-endpoint": "^0.0.5",
