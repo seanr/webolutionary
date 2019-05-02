@@ -17,10 +17,8 @@ services:
       - "terminus self:clear-cache"
       - "cd /app && composer install"
   node:
-    type: 'node:8.4'
-    globals:
-      gulp-cli: "latest"
-    extras:
+    type: 'node:8.14'
+    build_as_root:
       - "apt-get update -y"
       - "apt-get install -y \
          curl \
@@ -46,22 +44,23 @@ services:
          libxtst6 \
          libappindicator1 \
          libnss3 \
-         lsb-release"
+         lsb-release \
+         dnsutils \
+         traceroute"
       - "curl -sS https://getcomposer.org/installer -o composer-setup.php"
       - "php composer-setup.php --install-dir=/usr/local/bin --filename=composer"
       - "rm -f composer-setup.php"
     build:
-      - "rm -rf /app/web/themes/custom/webolutionary/pattern-lab /app/web/themes/custom/webolutionary/node_modules"
-      - "cd /app/web/themes/custom/webolutionary && npm install -y"
-      - "cd /app/web/themes/custom/webolutionary && npm run install-pattern-lab"
-      - "cd /app/web/themes/custom/webolutionary && npm run sass"
+      - "rm -rf /app/web/themes/custom/webolutionary/pattern-lab/public /app/web/themes/custom/webolutionary/src/pattern-lab/_twig-components /app/web/themes/custom/webolutionary/pattern-lab/vendor /app/web/themes/custom/webolutionary/node_modules"
+      - "cd /app/web/themes/custom/webolutionary/pattern-lab && composer install"
+      - "cd /app/web/themes/custom/webolutionary && npm install --no-shrinkwrap -y"
+      - "cd /app/web/themes/custom/webolutionary && npm run build"
     overrides:
-      services:
-        ports:
-          - 8088:8088
+      ports:
+        - 8888:8888
 proxy:
   node:
-    - patterns.webolutionary.lndo.site:8088
+    - patterns.webolutionary.lndo.site:8888
 tooling:
   node:
     service: node
@@ -70,13 +69,7 @@ tooling:
   run:
     service: node
     user: root
-    cmd:
-      - "npm"
-      - "run"
-      - "--prefix=/app/web/themes/custom/webolutionary"
+    cmd: "npm run --prefix=/app/web/themes/custom/webolutionary"
   drush:
     service: appserver
-    cmd:
-      - "drush"
-      - "--root=/app/web"
-      - "--uri=https://webolutionary.lndo.site"
+    cmd: "drush --root=/app/web --uri=https://webolutionary.lndo.site"
