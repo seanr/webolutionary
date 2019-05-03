@@ -8,10 +8,10 @@ config:
 services:
   appserver:
     build:
-      - "cp -rf /app/terminus.config.yml $HOME/.terminus/config.yml"
-      - "terminus auth:login"
       - "rm -rf $HOME/.terminus/plugins"
       - "mkdir -p $HOME/.terminus/plugins"
+      - "cp -rf /app/terminus.config.yml $HOME/.terminus/config.yml"
+      - "terminus auth:login"
       - "composer create-project -d $HOME/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:~1"
       - "composer create-project --no-dev -d $HOME/.terminus/plugins pantheon-systems/terminus-drupal-console-plugin:~1"
       - "terminus self:clear-cache"
@@ -22,7 +22,8 @@ services:
       - "apt-get update -y"
       - "apt-get install -y \
          curl \
-         php5-cli \
+         php7.0-cli \
+         php-mbstring \
          git \
          unzip \
          gconf-service \
@@ -54,13 +55,13 @@ services:
       - "rm -rf /app/web/themes/custom/webolutionary/pattern-lab/public /app/web/themes/custom/webolutionary/src/pattern-lab/_twig-components /app/web/themes/custom/webolutionary/pattern-lab/vendor /app/web/themes/custom/webolutionary/node_modules"
       - "cd /app/web/themes/custom/webolutionary/pattern-lab && composer install"
       - "cd /app/web/themes/custom/webolutionary && npm install --no-shrinkwrap -y"
-      - "cd /app/web/themes/custom/webolutionary && npm run build"
+      - "cd /app/web/themes/custom/webolutionary && npm run sass"
     overrides:
       ports:
-        - 8888:8888
+        - 8080:8080
 proxy:
   node:
-    - patterns.webolutionary.lndo.site:8888
+    - patterns.webolutionary.lndo.site:8080
 tooling:
   node:
     service: node
