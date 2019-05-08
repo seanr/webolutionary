@@ -1,0 +1,20 @@
+uuid: f49f4bbe-4c46-451c-b913-1baa5e4a9ee5
+langcode: en
+status: true
+dependencies:
+  theme:
+    - webolutionary
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: webolutionary_local_actions
+theme: webolutionary
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -35,12 +35,6 @@ filters:
     status: true
     weight: -46
     settings: {  }
-  filter_html_image_secure:
-    id: filter_html_image_secure
-    provider: filter
-    status: false
-    weight: -41
-    settings: {  }
   filter_url:
     id: filter_url
     provider: filter
@@ -48,15 +42,6 @@ filters:
     weight: -42
     settings:
       filter_url_length: 72
-  filter_html:
-    id: filter_html
-    provider: filter
-    status: false
-    weight: -45
-    settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre>'
-      filter_html_help: true
-      filter_html_nofollow: false
   filter_autop:
     id: filter_autop
     provider: filter
@@ -69,6 +54,21 @@ filters:
     status: false
     weight: -44
     settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -41
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -45
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre>'
+      filter_html_help: true
+      filter_html_nofollow: false
   filter_geshifilter:
     id: filter_geshifilter
     provider: geshifilter

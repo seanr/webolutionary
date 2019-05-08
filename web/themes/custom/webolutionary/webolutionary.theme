@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Functions to support theming in Shila theme.
+ * Functions to support theming in webolutionary theme.
  */
 
 use Drupal\Core\Form\FormStateInterface;
@@ -112,11 +112,11 @@ function webolutionary_preprocess_ds_entity_view(&$variables) {
 
 /**
  * Adds entity type and view mode BEM modifier classes and contextual links to
- * shila-cards when using UI Patterns module.
+ * webolutionary-cards when using UI Patterns module.
  *
  * Implements hook_preprocess_HOOK().
  */
-function webolutionary_preprocess_pattern_shila_card(&$variables) {
+function webolutionary_preprocess_pattern_webolutionary_card(&$variables) {
   $classes = [
     'card--type-' . $variables['context']->getProperty('bundle'),
     'card--view-mode-' . $variables['context']->getProperty('view_mode'),
