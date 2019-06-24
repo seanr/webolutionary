@@ -1,0 +1,37 @@
+items:
+  - name: $white
+    value: white
+  - name: $tan-light
+    value: '#fff5d9'
+  - name: $tan-medium
+    value: '#f0c986'
+  - name: $tan-dark
+    value: '#a68452'
+  - name: $blue-bright
+    value: '#0061e4'
+  - name: $blue-light
+    value: '#00367f'
+  - name: $blue-medium
+    value: '#00204c'
+  - name: $blue-dark
+    value: '#00132d'
+  - name: $near-white
+    value: '#f2f2f2'
+  - name: $gray-lightest
+    value: '#e5e5e5'
+  - name: $gray-lighter
+    value: '#ccc'
+  - name: $gray-light
+    value: '#999'
+  - name: $gray
+    value: '#666'
+  - name: $gray-dark
+    value: '#4c4c4c'
+  - name: $gray-darker
+    value: '#333'
+  - name: $black
+    value: black
+meta:
+  description: >-
+    To add to these items, use Sass variables that start with <code>$</code> in
+    <code>.//components/_patterns/00-base/global/01-colors/_color-vars.scss</code>

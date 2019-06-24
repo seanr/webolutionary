@@ -1,0 +1,15 @@
+/// Link colors
+$color-link: $blue-light;
+$color-link--hover: $blue-bright;
+
+@mixin link {
+  color: $color-link;
+
+  &:hover {
+    color: $color-link--hover;
+  }
+}
+
+.link {
+  @include link;
+}

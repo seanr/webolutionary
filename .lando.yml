@@ -16,7 +16,25 @@ services:
       - "composer create-project --no-dev -d $HOME/.terminus/plugins pantheon-systems/terminus-drupal-console-plugin:~1"
       - "terminus self:clear-cache"
       - "cd /app && composer install"
+  patterns:
+    type: php:7.1
+    via: cli
+    build_as_root:
+      - "apt-get update && apt-get -y install \
+         libx11-xcb1"
+      - "curl -sL https://deb.nodesource.com/setup_8.x | bash - && apt-get install -y nodejs"
+      - "nodejs -v"
+      - "cd /app/web/themes/custom/webolutionary && npm install"
+    overrides:
+      ports:
+        - 3000:3000
+proxies:
+  patterns:
+    - patterns.webolutionary.lndo.site:3000
 tooling:
   drush:
     service: appserver
     cmd: "drush --root=/app/web --uri=https://webolutionary.lndo.site"
+  watch:
+    service: patterns
+    cmd: "npm start --prefix=/app/web/themes/custom/webolutionary"
