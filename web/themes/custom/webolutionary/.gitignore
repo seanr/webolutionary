@@ -7,7 +7,7 @@ build
 pattern-lab
 
 # Twig helper functions
-**/add_attributes.function.php
+#**/add_attributes.function.php
 #**/bem.function.php
 **/pl_attach-library.function.php
 
