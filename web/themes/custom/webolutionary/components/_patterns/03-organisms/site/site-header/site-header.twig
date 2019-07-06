@@ -1,12 +1,16 @@
 <header class="header">
-  {% block header_content %}
-    {% include "@atoms/04-images/00-image/figure.twig" with {
-      img_src: '../../images/logo.png',
-      img_alt: 'Logo',
-      img_url: logo_link_url|default('/'),
-      image_figure_base_class: 'logo',
-      image_link_blockname: 'logo',
-    } %}
-    {% include "@molecules/menus/main-menu/main-menu.twig" %}
-  {% endblock %}
+  <div class="inner">
+    {% block header_content %}
+      {% include "@atoms/04-images/00-image/figure.twig" with {
+        img_src: '../../images/logo-white.png',
+        img_srcset: '../../images/logo-white.png 1x, ../../images/logo-white-2x.png 2x',
+        img_alt: 'Logo',
+        img_url: logo_link_url|default('/'),
+        image_figure_base_class: 'logo',
+        image_link_blockname: 'logo',
+      } %}
+      {% include "@molecules/menus/main-menu/main-menu.twig" %}
+      {% include "@molecules/site-slogan/site-slogan.twig" %}
+    {% endblock %}
+  </div>
 </header>

@@ -21,7 +21,10 @@ services:
     via: cli
     build_as_root:
       - "apt-get update && apt-get -y install \
-         libx11-xcb1"
+         libnss3 \
+         libx11-6 \
+         libx11-xcb1 \
+         libxtst6"
       - "curl -sL https://deb.nodesource.com/setup_8.x | bash - && apt-get install -y nodejs"
       - "nodejs -v"
       - "cd /app/web/themes/custom/webolutionary && npm install"

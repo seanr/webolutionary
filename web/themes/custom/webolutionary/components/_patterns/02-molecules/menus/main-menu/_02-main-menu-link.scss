@@ -1,49 +1,24 @@
 // A
 .main-menu__link {
-  color: $gray-dark;
+  color: $blue-bright;
   display: block;
   font-size: 1.2rem;
   line-height: 1.5;
-  padding: $space $space-triple $space $space-double;
+  padding: $space;
   text-decoration: none;
   font-weight: bold;
 
-  &--with-sub {
-    width: 80%;
-  }
-
   @include breakpoint($main-menu-medium) {
     border-bottom: none;
-    color: $gray-dark;
     display: inline-block;
     font-size: 1.1rem;
-    padding: $space $space-double $space $space;
+    padding: $space $space;
     text-transform: none;
     position: relative;
     width: auto;
 
-    &.active,
-    &:active,
-    &:hover {
-      color: $gray-lighter;
-    }
-
-    &::after {
-      color: $white;
-      display: inline-block;
-      content: ">";
-    }
-
-    &--sub::after {
-      display: none;
-    }
-
     &:hover {
       color: $white;
-
-      &::after {
-        color: $gray-light;
-      }
     }
   }
 }

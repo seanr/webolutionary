@@ -1,1 +1,23 @@
-//  Empty
+.header {
+  max-width: 100%;
+  background-image: url("../components/images/webolutionary-header.jpg");
+}
+
+.header > .inner {
+  padding-top: 105px;
+  padding-bottom: 200px;
+}
+
+.header .logo {
+  margin-bottom: 25px;
+  margin-left: 10px;
+}
+
+@media (min-width: 1224px) {
+  .header > .inner {
+    max-width: 1224px;
+    margin: 0 auto;
+    padding-left: calc(1rem + calc(-50vw + calc(1224px / 2)));
+    padding-right: calc(1rem + calc(-50vw + calc(1224px / 2)));
+  }
+}

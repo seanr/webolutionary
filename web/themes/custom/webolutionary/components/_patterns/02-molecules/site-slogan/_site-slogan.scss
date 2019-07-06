@@ -1,0 +1,16 @@
+.site-slogan {
+  margin-bottom: 2%;
+  padding: 1em;
+  width: 25%;
+}
+
+.site-slogan__title {
+  @include heading-medium($font-size: 1rem);
+
+  font-weight: 400;
+  text-align: center;
+}
+
+.site-slogan__link {
+  @include link;
+}
