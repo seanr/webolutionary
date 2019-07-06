@@ -1953,7 +1953,7 @@
                 "zendframework/zend-feed": "^2.4"
             },
             "conflict": {
-                "drush/drush": "<8.1.10"
+                "drush/drush": "^8.1"
             },
             "replace": {
                 "drupal/action": "self.version",
