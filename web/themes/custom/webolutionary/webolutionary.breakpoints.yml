@@ -14,3 +14,10 @@ webolutionary.medium:
 webolutionary.large:
   label: large
   mediaQuery: 'all and (min-width: 61.25em)'
+webolutionary.image_pixel_density_only:
+  label: Pixel Density Only
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x

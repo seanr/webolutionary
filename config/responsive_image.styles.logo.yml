@@ -1,0 +1,25 @@
+uuid: 15cfb7aa-5865-4809-b9cc-9a5d1ad79179
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large
+    - image.style.max_1300x1300
+    - image.style.max_2600x2600
+  theme:
+    - webolutionary
+id: logo
+label: Logo
+image_style_mappings:
+  -
+    breakpoint_id: webolutionary.image_pixel_density_only
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: max_2600x2600
+  -
+    breakpoint_id: webolutionary.image_pixel_density_only
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: max_1300x1300
+breakpoint_group: webolutionary
+fallback_image_style: large

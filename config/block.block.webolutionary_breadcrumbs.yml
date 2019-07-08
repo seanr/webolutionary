@@ -1,0 +1,22 @@
+uuid: be9c74f3-d86f-463c-bbc4-7a8f75fcf254
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - webolutionary
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: webolutionary_breadcrumbs
+theme: webolutionary
+region: header
+weight: -4
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }
