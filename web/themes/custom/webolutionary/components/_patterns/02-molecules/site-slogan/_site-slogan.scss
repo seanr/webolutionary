@@ -1,10 +1,11 @@
-.site-slogan {
+.site-slogan, .block-hiimsean {
   margin-bottom: 2%;
   padding: 1em;
   width: 25%;
+  color: #fff;
 }
 
-.site-slogan__title {
+.site-slogan__title, .block-hiimsean h2 {
   @include heading-medium($font-size: 1rem);
 
   font-weight: 400;
