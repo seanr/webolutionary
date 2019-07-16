@@ -1,5 +1,8 @@
 logo_link_url: "#"
 
+img_srcset: "../../images/logo-white.png 1x, ../../images/logo-white-2x.png 2x"
+img_src: "../../images/logo-white.png"
+
 menu_items:
   - title: "Home"
     url: "#"

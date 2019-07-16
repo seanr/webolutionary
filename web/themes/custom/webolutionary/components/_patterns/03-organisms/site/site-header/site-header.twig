@@ -1,15 +1,8 @@
 <header class="header">
   <div class="inner">
-    <!--<figure class="logo">
-      <a class="logo__link" href="#">
-        <picture class="logo__image">
-          <img class="logo__img" srcset="/themes/custom/webolutionary/components/images/logo-white.png 1x, /themes/custom/webolutionary/components/images/logo-white-2x.png 2x" src="/themes/custom/webolutionary/components/images/logo-white.png" alt="Logo">
-        </picture>
-      </a>
-    </figure>-->
     {% include "@atoms/04-images/00-image/figure.twig" with {
-      img_srcset: '../../images/logo-white.png 1x, ../../images/logo-white-2x.png 2x',
-      img_src: '../../images/logo-white.png',
+      img_srcset: img_srcset|default('/themes/custom/webolutionary/components/images/logo-white.png 1x, /themes/custom/webolutionary/components/images/logo-white-2x.png 2x'),
+      img_src: img_src|default('/themes/custom/webolutionary/components/images/logo-white.png'),
       img_alt: 'Logo',
       img_url: logo_link_url|default('/'),
       image_figure_base_class: 'logo',
