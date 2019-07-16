@@ -6,10 +6,12 @@
     display: none;
   }
 
-  display: inline-block;
+  display: block;
+  float: right;
+  margin-top: -81px;
   padding: $space;
   text-decoration: none;
-  width: 100%;
+  width: auto;
 
   // See main-menu.js
   &--open {
@@ -18,7 +20,7 @@
 }
 
 .toggle-expand__text {
-  display: block;
+  display: none;
   font-size: 0.9rem;
   font-weight: bold;
 
@@ -32,6 +34,7 @@
   height: 3rem;
   width: 3rem;
   margin: 0 auto;
+  fill: $white;
 }
 
 .toggle-expand__open {
