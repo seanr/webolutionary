@@ -28,6 +28,8 @@ module:
   image: 0
   link: 0
   menu_ui: 0
+  metatag: 0
+  module_filter: 0
   node: 0
   options: 0
   page_cache: 0
@@ -41,6 +43,7 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   tour: 0
   unified_twig_ext: 0
@@ -48,6 +51,7 @@ module:
   user: 0
   views_ui: 0
   menu_link_content: 1
+  xmlsitemap: 1
   views: 10
   standard: 1000
 theme:
