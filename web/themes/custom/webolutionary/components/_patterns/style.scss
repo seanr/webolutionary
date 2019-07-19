@@ -11,3 +11,19 @@
 @import "03-organisms/**/*.scss";
 @import "04-templates/**/*.scss";
 @import "05-pages/**/*.scss";
+
+// Custom styles
+#block-views-block-projects-block-1 {
+  margin-top: -178px;
+}
+
+#block-views-block-projects-block-1 h2 {
+  display: none;
+}
+
+#block-views-block-projects-block-1 .field--name-field-project-image img {
+  -webkit-mask-image: url("/themes/custom/webolutionary/components/images/mask-image-flipped.png");
+  mask-image: url("/themes/custom/webolutionary/components/images/mask-image-flipped.png");
+  -webkit-mask-position: top right;
+  mask-position: top right;
+}
