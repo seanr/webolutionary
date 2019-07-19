@@ -35,6 +35,8 @@
         "drupal/slick_media": "^1.1",
         "drupal/slick_views": "^2.0",
         "drupal/token": "^1.5",
+        "drupal/twig_field_value": "^1.2",
+        "drupal/twig_tweak": "^2.4",
         "drupal/ui_patterns": "^1.0@RC",
         "drupal/xmlsitemap": "^1.0@alpha",
         "drush-ops/behat-drush-endpoint": "^0.0.5",
