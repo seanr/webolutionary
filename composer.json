@@ -27,6 +27,7 @@
         "drupal/core": "^8.7.5",
         "drupal/devel": "^2.1",
         "drupal/geshifilter": "1.x-dev",
+        "drupal/image_widget_crop": "^2.2",
         "drupal/kint": "^2.1",
         "drupal/metatag": "^1.8",
         "drupal/module_filter": "^3.1",
