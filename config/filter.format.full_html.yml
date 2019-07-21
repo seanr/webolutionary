@@ -75,5 +75,17 @@ filters:
     status: true
     weight: -50
     settings:
-      general_tags: {  }
-      per_language_settings: {  }
+      general_tags:
+        tags: 'code blockcode'
+        tag_styles:
+          1: 1
+          2: 2
+          4: 0
+          8: 0
+          16: 0
+        decode_entities: false
+      per_language_settings:
+        table:
+          language:
+            yaml:
+              tags: yaml

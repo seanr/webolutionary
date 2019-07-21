@@ -1,0 +1,20 @@
+uuid: 869177e5-9a2b-4c96-9382-cf013311dd33
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.crop_responsive_example
+_core:
+  default_config_hash: WKaURN4eG2IeJQREJzDG11omNNprWxx9QWtXQRVyOa4
+id: node.crop_responsive_example.title
+field_name: title
+entity_type: node
+bundle: crop_responsive_example
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

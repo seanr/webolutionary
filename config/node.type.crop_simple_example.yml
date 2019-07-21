@@ -1,0 +1,20 @@
+uuid: ca1a20fa-5c0f-4afc-a5d3-5b82037bddfd
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: Qph4gLmIzNQxAQJQx4pP-wFxsINwNt1hz4UWwWv-Lg4
+name: 'Crop Simple Example'
+type: crop_simple_example
+description: 'Implementation of ImageWidgetCrop with basic (core) File field.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true

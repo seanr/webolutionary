@@ -1,9 +1,11 @@
 .card__title {
-  @include heading-large($font-size: 1.3rem);
+  @include heading-large($font-size: 1.8rem);
   @include no-bottom;
 
   &-link {
     @include link;
+
+    text-decoration: none;
   }
 }
 

@@ -15,38 +15,18 @@ tag_styles:
   16: 0
 tab_width: 8
 language:
-  php:
-    enabled: true
-    tags: php
-  cpp:
-    tags: cpp
+  php: {  }
+  cpp: {  }
   java: {  }
-  bash:
-    enabled: true
-    tags: bash
-  css:
-    enabled: true
-    tags: css
-  html5:
-    enabled: true
-    tags: html
-  javascript:
-    enabled: true
-    tags: javascript
-  jquery:
-    enabled: true
-    tags: jquery
-  mysql:
-    enabled: true
-    tags: mysql
-  sass:
-    enabled: true
-    tags: sass
-  twig:
-    enabled: true
-    tags: twig
+  bash: {  }
+  css: {  }
+  html5: {  }
+  javascript: {  }
+  jquery: {  }
+  mysql: {  }
+  sass: {  }
+  twig: {  }
   yaml:
     enabled: true
-    tags: yaml
 _core:
   default_config_hash: 1jZtSc2CSiEBA45nbX0wMKFY3bmcilIwOBQCKFscK0U

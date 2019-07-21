@@ -14,16 +14,46 @@
 
 // Custom styles
 #block-views-block-projects-block-1 {
-  margin-top: -178px;
+  h2 {
+    display: none;
+  }
+
+  .field--name-field-project-image img {
+    -webkit-mask-image: url("/themes/custom/webolutionary/components/images/mask-image-flipped.png");
+    mask-image: url("/themes/custom/webolutionary/components/images/mask-image-flipped.png");
+    -webkit-mask-position: top right;
+    mask-position: top right;
+  }
 }
 
-#block-views-block-projects-block-1 h2 {
-  display: none;
+@include breakpoint($xs) {
+  #block-views-block-projects-block-1 {
+    margin-top: -40px;
+
+    .field--name-field-project-image img {
+      -webkit-mask-size: 720px;
+      mask-size: 720px;
+    }
+  }
 }
 
-#block-views-block-projects-block-1 .field--name-field-project-image img {
-  -webkit-mask-image: url("/themes/custom/webolutionary/components/images/mask-image-flipped.png");
-  mask-image: url("/themes/custom/webolutionary/components/images/mask-image-flipped.png");
-  -webkit-mask-position: top right;
-  mask-position: top right;
+@include breakpoint($medium) {
+  #block-views-block-projects-block-1 {
+    margin-top: -158px;
+
+    .field--name-field-project-image img {
+      -webkit-mask-size: 1440px;
+      mask-size: 1440px;
+    }
+  }
+}
+
+@include breakpoint($xl) {
+  #block-views-block-projects-block-1 {
+    margin-top: -209px;
+  }
+
+  .main-content > div {
+    padding-left: 1em;
+  }
 }

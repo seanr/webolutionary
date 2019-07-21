@@ -21,11 +21,12 @@ ol {
 
 .list-item {
   margin-bottom: 0.2em;
-  padding-left: 1em;
+  margin-left: 1em;
 }
 
 // TODO: BEM selectors should be applied to wysiwyg-created content
 
+.block,
 .text-long {
   ol,
   ul {

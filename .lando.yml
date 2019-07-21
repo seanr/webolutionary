@@ -21,7 +21,9 @@ services:
     via: cli
     build_as_root:
       - "apt-get update && apt-get -y install \
+         libatk-bridge2.0-0 \
          libasound2 \
+         libgtk-3.0 \
          libnss3 \
          libx11-6 \
          libx11-xcb1 \
