@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.project.body
     - field.field.node.project.field_link
     - field.field.node.project.field_project_image
+    - field.field.node.project.field_project_type
     - node.type.project
   module:
     - link
@@ -44,8 +45,16 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-  links:
+  field_project_type:
     weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

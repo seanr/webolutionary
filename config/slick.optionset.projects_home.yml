@@ -22,8 +22,8 @@ options:
     asNavFor: ''
     accessibility: true
     adaptiveHeight: false
-    autoplay: false
-    autoplaySpeed: 3000
+    autoplay: true
+    autoplaySpeed: 6000
     pauseOnHover: true
     pauseOnDotsHover: true
     arrows: true
@@ -52,7 +52,7 @@ options:
     slide: ''
     slidesToShow: 1
     slidesToScroll: 1
-    speed: 500
+    speed: 1000
     swipe: true
     swipeToSlide: true
     edgeFriction: 0.35
