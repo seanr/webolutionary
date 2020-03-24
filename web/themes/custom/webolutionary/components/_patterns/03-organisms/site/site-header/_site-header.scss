@@ -27,6 +27,7 @@
 
   .header > .inner {
     padding-top: 52px;
+    padding-bottom: 75px;
   }
 
   .header .logo {
@@ -37,6 +38,7 @@
 @include breakpoint($medium) {
   .header {
     background-size: 1080px;
+    margin-bottom: 4em;
   }
 
   .header > .inner {
