@@ -84,6 +84,6 @@
   {% endblock %}
 
   {% block card_info %}
-    {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+    {% trans %}{{ node.getCreatedTime|date('l, F j, Y') }}{% endtrans %}
   {% endblock %}
 {% endembed %}
