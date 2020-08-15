@@ -84,6 +84,7 @@
   {% endblock %}
 
   {% block card_info %}
-    {% trans %}{{ node.getCreatedTime|date('l, F j, Y') }}{% endtrans %}
+    {% set date_custom = node.getCreatedTime|date('l, F j, Y') %}
+    {% trans %}{{ date_custom }}{% endtrans %}
   {% endblock %}
 {% endembed %}
