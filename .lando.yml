@@ -8,12 +8,12 @@ config:
 services:
   appserver:
     build:
-      - "rm -rf $HOME/.terminus/plugins"
-      - "mkdir -p $HOME/.terminus/plugins"
-      - "cp -rf /app/terminus.config.yml $HOME/.terminus/config.yml"
+      - "rm -rf ~/.terminus/plugins"
+      - "mkdir -p ~/.terminus/plugins"
+      - "cp -rf /app/terminus.config.yml ~/.terminus/config.yml"
       - "terminus auth:login"
-      - "composer create-project -d $HOME/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:~1"
-      - "composer create-project --no-dev -d $HOME/.terminus/plugins pantheon-systems/terminus-drupal-console-plugin:~1"
+      - "composer create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:~1"
+      - "composer create-project --no-dev -d ~/.terminus/plugins pantheon-systems/terminus-drupal-console-plugin:~1"
       - "terminus self:clear-cache"
       - "cd /app && composer install"
   patterns:
