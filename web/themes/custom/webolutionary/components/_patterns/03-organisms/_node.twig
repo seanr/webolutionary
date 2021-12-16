@@ -89,8 +89,7 @@
     <footer>
       {{ author_picture }}
       <div{{ author_attributes }}>
-        {% set date_custom = node.getCreatedTime|date('l, F j, Y') %}
-        {% trans %}{{ date_custom }}{% endtrans %}
+        {{ node.getCreatedTime|date('l, F j, Y') }}
         {{ metadata }}
       </div>
     </footer>
