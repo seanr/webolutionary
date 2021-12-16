@@ -5,6 +5,7 @@ config:
   site: webolutionary
   id: da848ed7-9c52-4e9c-a2dd-6f255d766d85
   drupal: true
+  composer_version: '1.10.22'
 services:
   appserver:
     build:
