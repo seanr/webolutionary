@@ -13,7 +13,7 @@
         "php": ">=7.0.8",
         "composer/installers": "^1.0.20",
         "cweagans/composer-patches": "^1.0",
-        "drupal-composer/drupal-scaffold": "^2.0.1",
+        "drupal-composer/drupal-scaffold": "^2.5.0",
         "drupal-pattern-lab/unified-twig-extensions": "^0.1.0",
         "drupal/admin_toolbar": "^1.27",
         "drupal/adminimal_admin_toolbar": "^1.5",

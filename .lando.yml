@@ -5,6 +5,8 @@ config:
   site: webolutionary
   id: da848ed7-9c52-4e9c-a2dd-6f255d766d85
   drupal: true
+  webroot: web
+  php: '7.4'
   composer_version: '1.10.22'
 services:
   appserver:
@@ -13,12 +15,12 @@ services:
       - "mkdir -p ~/.terminus/plugins"
       - "cp -rf /app/terminus.config.yml ~/.terminus/config.yml"
       - "terminus auth:login"
-      - "composer create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:~1"
+      - "composer create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:~2"
       - "composer create-project --no-dev -d ~/.terminus/plugins pantheon-systems/terminus-drupal-console-plugin:~1"
       - "terminus self:clear-cache"
       - "cd /app && composer install"
   patterns:
-    type: php:7.1
+    type: php:7.4
     via: cli
     build_as_root:
       - "apt-get update && apt-get -y install \
