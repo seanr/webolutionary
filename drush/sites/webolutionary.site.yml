@@ -1,0 +1,9 @@
+'*':
+  host: appserver.${env-name}.da848ed7-9c52-4e9c-a2dd-6f255d766d85.drush.in
+  paths:
+    files: files
+  uri: ${env-name}-webolutionary.pantheonsite.io
+  user: ${env-name}.da848ed7-9c52-4e9c-a2dd-6f255d766d85
+  ssh:
+    options: '-p 2222 -o "AddressFamily inet"'
+    tty: false

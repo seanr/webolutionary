@@ -7,7 +7,7 @@ config:
   drupal: true
   webroot: web
   php: '7.4'
-  composer_version: '1.10.22'
+  composer_version: 2
 services:
   appserver:
     build:
@@ -42,9 +42,6 @@ proxies:
   patterns:
     - patterns.webolutionary.lndo.site:3000
 tooling:
-  drush:
-    service: appserver
-    cmd: "drush --root=/app/web --uri=https://webolutionary.lndo.site"
   watch:
     service: patterns
     cmd: "npm start --prefix=/app/web/themes/custom/webolutionary"
