@@ -1,0 +1,11 @@
+uuid: d1de5277-7311-4aa7-affb-572985d04248
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: site_slogan
+title: 'Hi, I''m Sean'
+content:
+  value: "<p>I manipulate pixels and code to create award-winning web sites. I hope you’ll take some time to learn more about me, view my portfolio, and read my blog.</p>\r\n"
+  format: full_html

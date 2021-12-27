@@ -1,0 +1,32 @@
+uuid: 4ab4a96a-3f10-4e88-bdc8-3a4b0a020ed1
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - media
+_core:
+  default_config_hash: JIVtiPd6u1JyNbgvc2g9Eij2NlkclNoxhO2kI3Lc0lo
+id: media.field_image_crop
+field_name: field_image_crop
+entity_type: media
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
