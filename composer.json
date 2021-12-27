@@ -28,6 +28,9 @@
     "require": {
         "php": ">=7.4",
         "composer-plugin-api": "^2.0",
+        "bower-asset/blazy": "^1.8",
+        "bower-asset/jquery-mousewheel": "^3.1",
+        "bower-asset/jquery.easing": "^1.3",
         "composer/installers": "^1.0.20",
         "cweagans/composer-patches": "^1.7",
         "drupal-pattern-lab/unified-twig-extensions": "^0.1.0",
@@ -69,7 +72,8 @@
         "fourkitchens/emulsify": "^3.1",
         "pantheon-systems/drupal-integrations": "^8",
         "pantheon-systems/quicksilver-pushback": "~1",
-        "rvtraveller/qs-composer-installer": "^1.1"
+        "rvtraveller/qs-composer-installer": "^1.1",
+        "slick/slick": "^1.8"
     },
     "require-dev": {
         "behat/behat": "3.*",
@@ -120,7 +124,7 @@
     "extra": {
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries": [
+            "web/libraries/{$name}": [
                 "type:drupal-library",
                 "type:bower-asset",
                 "type:npm-asset",
