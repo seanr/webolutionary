@@ -7,6 +7,22 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "slick/slick",
+                "version": "v1.8.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/kenwheeler/slick/archive/master.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -19,7 +35,7 @@
         "drupal/adminimal_admin_toolbar": "^1.5",
         "drupal/adminimal_theme": "^1.3",
         "drupal/better_social_sharing_buttons": "^2.1",
-        "drupal/blazy": "~1.0",
+        "drupal/blazy": "^2.0",
         "drupal/codesnippet_geshifilter": "1.x-dev",
         "drupal/components": "^1.0",
         "drupal/config_direct_save": "^1.0",
@@ -39,9 +55,9 @@
         "drupal/recaptcha": "^3.0",
         "drupal/recaptcha_v3": "^1.4",
         "drupal/simple_block": "^1.0@beta",
-        "drupal/slick": "^1.1",
-        "drupal/slick_media": "^1.1",
-        "drupal/slick_views": "^2.0",
+        "drupal/slick": "^2.0",
+        "drupal/slick_media": "dev-3.x",
+        "drupal/slick_views": "^2.6",
         "drupal/token": "^1.5",
         "drupal/twig_field_value": "^1.2",
         "drupal/twig_tweak": "^2.4",
@@ -104,7 +120,13 @@
     "extra": {
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries": ["type:drupal-library"],
+            "web/libraries": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset",
+                "vendor:npm-asset",
+                "vendor:bower-asset"
+            ],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
