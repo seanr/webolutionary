@@ -1,20 +1,21 @@
 # Ignore compiled files.
-vendor
-build
+dist
 
-# Pattern Lab (ignored initially)
-pattern-lab
-
-# Twig helper functions
-**/add_attributes.function.php
-**/bem.function.php
-**/pl_attach-library.function.php
-
-# NPM
+# Yarn/NPM
 node_modules
-npm-debug.log
+
+# Storybook
+.out
+
+# System
+.DS_Store
 
 # Git deploy
 .publish
 
-.DS_Store
+# Composer
+composer.lock
+vendor
+
+# Jest
+.coverage

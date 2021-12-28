@@ -19,6 +19,10 @@ services:
       - "composer create-project --no-dev -d ~/.terminus/plugins pantheon-systems/terminus-drupal-console-plugin:~1"
       - "terminus self:clear-cache"
       - "cd /app && composer install"
+  node:
+    type: node:16
+    globals:
+      gulp-cli: latest
   patterns:
     type: php:7.4
     via: cli
@@ -32,7 +36,7 @@ services:
          libx11-xcb1 \
          libxss1 \
          libxtst6"
-      - "curl -sL https://deb.nodesource.com/setup_8.x | bash - && apt-get install -y nodejs"
+      - "curl -sL https://deb.nodesource.com/setup_16.x | bash - && apt-get install -y nodejs"
       - "nodejs -v"
       - "cd /app/web/themes/custom/webolutionary && npm install"
     overrides:
@@ -45,3 +49,7 @@ tooling:
   watch:
     service: patterns
     cmd: "npm start --prefix=/app/web/themes/custom/webolutionary"
+  npm:
+    service: node
+    dir: /app/web/themes/contrib/emulsify_drupal
+    cmd: npm
