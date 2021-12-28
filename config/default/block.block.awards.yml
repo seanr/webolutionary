@@ -18,11 +18,11 @@ plugin: 'simple_block:awards'
 settings:
   id: 'simple_block:awards'
   label: 'Awards & Honors'
-  provider: simple_block
   label_display: visible
+  provider: simple_block
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
     negate: false
     context_mapping: {  }
+    pages: "<front>\r\n/about"

@@ -1,12 +1,14 @@
+_core:
+  default_config_hash: 1jZtSc2CSiEBA45nbX0wMKFY3bmcilIwOBQCKFscK0U
+tags: 'code blockcode'
 use_format_specific_options: true
 default_highlighting: GESHIFILTER_DEFAULT_DONOTHING
 default_line_numbering: 1
 use_highlight_string_for_php: false
-enable_keyword_urls: true
 decode_entities: true
+enable_keyword_urls: true
 css_mode: 1
 code_container: '3'
-tags: 'code blockcode'
 tag_styles:
   1: 1
   2: 2
@@ -28,5 +30,3 @@ language:
   twig: {  }
   yaml:
     enabled: true
-_core:
-  default_config_hash: 1jZtSc2CSiEBA45nbX0wMKFY3bmcilIwOBQCKFscK0U

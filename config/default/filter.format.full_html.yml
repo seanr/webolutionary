@@ -83,7 +83,7 @@ filters:
           4: 0
           8: 0
           16: 0
-        decode_entities: false
+        decode_entities: true
       per_language_settings:
         table:
           language:

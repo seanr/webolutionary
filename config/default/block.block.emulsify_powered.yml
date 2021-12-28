@@ -1,0 +1,22 @@
+uuid: 74f2490a-203a-4dca-95fb-ad32945419fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - emulsify
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: emulsify_powered
+theme: emulsify
+region: header
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -9,8 +9,8 @@ _core:
   default_config_hash: goc_GnLq3UtQGts6LYtodwydocPxHywfRJ3cPSzGoV8
 id: projects_home
 name: projects_home
-label: 'Projects (home)'
 weight: -10
+label: 'Projects (home)'
 group: ''
 skin: classic
 breakpoints: 0
@@ -23,12 +23,12 @@ options:
     accessibility: true
     adaptiveHeight: false
     autoplay: true
-    autoplaySpeed: 6000
     pauseOnHover: true
     pauseOnDotsHover: true
+    autoplaySpeed: 6000
     arrows: true
-    prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0">Previous</button>'
-    nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0">Next</button>'
+    prevArrow: Previous
+    nextArrow: Next
     downArrow: false
     downArrowTarget: ''
     downArrowOffset: 0
