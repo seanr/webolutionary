@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9bc82ead37bfed0b1a69d4a20a49da00",
+    "content-hash": "28920c347a476f83738fd2770d302b0e",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2122,35 +2122,6 @@
             },
             "abandoned": "roave/better-reflection",
             "time": "2020-10-27T21:46:55+00:00"
-        },
-        {
-            "name": "drupal-pattern-lab/unified-twig-extensions",
-            "version": "v0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drupal-pattern-lab/unified-twig-extensions.git",
-                "reference": "862b9deccab544ca68e3aaaccc257d14acc9b1f6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drupal-pattern-lab/unified-twig-extensions/zipball/862b9deccab544ca68e3aaaccc257d14acc9b1f6",
-                "reference": "862b9deccab544ca68e3aaaccc257d14acc9b1f6",
-                "shasum": ""
-            },
-            "type": "drupal-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Salem Ghoweri",
-                    "role": "Contributor"
-                }
-            ],
-            "description": "Share Pattern Lab's custom Twig extensions with Drupal 8.",
-            "support": {
-                "issues": "https://github.com/drupal-pattern-lab/unified-twig-extensions/issues",
-                "source": "https://github.com/drupal-pattern-lab/unified-twig-extensions.git"
-            },
-            "time": "2017-08-08T19:57:42+00:00"
         },
         {
             "name": "drupal/admin_toolbar",
